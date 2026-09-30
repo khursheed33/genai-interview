@@ -9,7 +9,7 @@
 - [x] [03-backend-frameworks](../topics/03-backend-frameworks/) — done 2026-09-30 (see log)
 - [x] [04-auth-security](../topics/04-auth-security/) — done 2026-09-30 (see log)
 - [x] [05-networking-proxy-dns](../topics/05-networking-proxy-dns/) — done 2026-09-30 (see log)
-- [ ] [06-databases](../topics/06-databases/)
+- [x] [06-databases](../topics/06-databases/) — done 2026-09-30 (see log)
 - [ ] [07-caching](../topics/07-caching/)
 - [ ] [08-messaging-async](../topics/08-messaging-async/)
 - [ ] [09-system-design](../topics/09-system-design/)
@@ -46,6 +46,7 @@
 | W1 (2026-09-30) | 03-backend-frameworks | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 04-auth-security | notes(8) + examples(8) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 05-networking-proxy-dns | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 06-databases | notes(8) + examples(8) + exercises(5/7 tests) + Q/A(20+) | 4 (pending self-quiz) |
 
 ## Completed log
 
@@ -87,3 +88,10 @@
 - **Exercises (5, 10/10 pytest pass):** `exercise-01-cidr-plan`, `exercise-02-dns-cache`, `exercise-03-proxy-headers` (fixed dead-upstream times in test), `exercise-04-lb-pickers`, `exercise-05-tunnel-debug`. Run: `uv run pytest topics/05-networking-proxy-dns/exercises -q`.
 - **Interview Q/A (20+):** in `topics/05-networking-proxy-dns/interview-questions.md` + gotchas + self-score table.
 - **Verified:** 10 passed; `ruff check` + `ruff format --check` clean (fixed RUF059/B905/E501).
+
+### 2026-09-30 — 06-databases ✅ (`topic/06-databases` → main)
+- **Notes (8):** `01-sql-core` (DDL/DML/DCL/TCL, joins + LEFT-trap, CTE→window, views/routines), `02-normalization` (1NF→BCNF, denormalize reads), `03-indexes-plans` (B-tree/GIN/partial/covering, EXPLAIN ritual, pgvector pointer), `04-transactions` (ACID, ghosts, MVCC, deadlocks, SKIP LOCKED, PgBouncer), `05-nosql` (5 countries, embed-vs-ref, pipeline, Cassandra keys, ES/BM25), `06-graph` (Cypher, RDF, fraud/recs/GraphRAG), `07-oltp-olap` (counter vs census, columnar, lake/house, JSONB/FTS), `08-distributed-theory` (CAP/PACELC/BASE, sharding, quorum, PITR).
+- **Examples (8, sqlite stdlib + node, all green):** `01_ddl_joins_windows.py`, `02_normalization.py`, `03_indexes_explain.py` (SCAN 2.9ms→SEARCH 0.2ms; planner picked composite over partial — re-demoed honestly on amount), `04_transactions.py` (rewrote broken lock-order helper + shared-conn threads → per-thread conns + busy-retry; 20 threads exact), `05_doc_pipeline.py` (removed nonsense assert), `06_bm25_search.py` (math beat my narrative — now teaches saturation + FTS5 agrees), `07_consistent_hash_quorum.py` (27% move), `08_graph_traversal.js`.
+- **Exercises (5, 7/7 pytest pass):** `exercise-01-cte-window`, `exercise-02-index-fix`, `exercise-03-transfer`, `exercise-04-pipeline`, `exercise-05-bm25-ring`. Run: `uv run pytest topics/06-databases/exercises -q`.
+- **Interview Q/A (20+):** in `topics/06-databases/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 7 passed; `ruff check` + `ruff format --check` clean (SIM105 suppress adopted).
