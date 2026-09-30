@@ -8,7 +8,7 @@
 - [x] [02-api-design-web-protocols](../topics/02-api-design-web-protocols/) — done 2026-09-30 (see log)
 - [x] [03-backend-frameworks](../topics/03-backend-frameworks/) — done 2026-09-30 (see log)
 - [x] [04-auth-security](../topics/04-auth-security/) — done 2026-09-30 (see log)
-- [ ] [05-networking-proxy-dns](../topics/05-networking-proxy-dns/)
+- [x] [05-networking-proxy-dns](../topics/05-networking-proxy-dns/) — done 2026-09-30 (see log)
 - [ ] [06-databases](../topics/06-databases/)
 - [ ] [07-caching](../topics/07-caching/)
 - [ ] [08-messaging-async](../topics/08-messaging-async/)
@@ -45,6 +45,7 @@
 | W1 (2026-09-30) | 02-api-design-web-protocols | notes(8) + examples(11) + exercises(5/12 tests) + Q/A(25+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 03-backend-frameworks | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 04-auth-security | notes(8) + examples(8) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 05-networking-proxy-dns | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 
 ## Completed log
 
@@ -79,3 +80,10 @@
 - **Exercises (5, 10/10 pytest pass):** `exercise-01-passwords`, `exercise-02-jwt-rotation`, `exercise-03-idor-guard`, `exercise-04-injection-guards`, `exercise-05-headers-pii`. Run: `uv run pytest topics/04-auth-security/exercises -q`.
 - **Interview Q/A (20+):** in `topics/04-auth-security/interview-questions.md` + gotchas + self-score table.
 - **Verified:** 10 passed; `ruff check` + `ruff format --check` clean.
+
+### 2026-09-30 — 05-networking-proxy-dns ✅ (`topic/05-networking-proxy-dns` → main)
+- **Notes (7):** `01-tcp-ip-foundation` (OSI/TCP-IP, TCP vs UDP, handshake, ports/sockets), `02-subnets-nat-vpc` (CIDR, routing, NAT, SG/NACL/bastion/VPN), `03-dns` (9 records, TTL, resolution, split-horizon, custom domains), `04-proxies` (forward/reverse, nginx 15-liner, corp env/PAC), `05-lb-cdn` (L4 vs L7, 5 algorithms, health/sticky/TLS, edge), `06-tunnels-mesh` (-L/-R/-D/k8s, discovery, Istio/Linkerd), `07-debugging` (symptom→tool table, corporate classics).
+- **Examples (7, all ran green on live localhost sockets):** `01_tcp_udp_sockets.py`, `02_cidr_subnets.py` (fixed `in`-needs-ip_address + wrong /26 assert live), `03_dns_cache.py`, `04_reverse_proxy.py` (backend+proxy, XFF/trace asserted), `05_load_balancer.py`, `06_tunnel_cmds.py`, `07_debug_probes.js` (dns+nc+curl timings).
+- **Exercises (5, 10/10 pytest pass):** `exercise-01-cidr-plan`, `exercise-02-dns-cache`, `exercise-03-proxy-headers` (fixed dead-upstream times in test), `exercise-04-lb-pickers`, `exercise-05-tunnel-debug`. Run: `uv run pytest topics/05-networking-proxy-dns/exercises -q`.
+- **Interview Q/A (20+):** in `topics/05-networking-proxy-dns/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 10 passed; `ruff check` + `ruff format --check` clean (fixed RUF059/B905/E501).
