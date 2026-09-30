@@ -10,7 +10,7 @@
 - [x] [04-auth-security](../topics/04-auth-security/) — done 2026-09-30 (see log)
 - [x] [05-networking-proxy-dns](../topics/05-networking-proxy-dns/) — done 2026-09-30 (see log)
 - [x] [06-databases](../topics/06-databases/) — done 2026-09-30 (see log)
-- [ ] [07-caching](../topics/07-caching/)
+- [x] [07-caching](../topics/07-caching/) — done 2026-09-30 (see log)
 - [ ] [08-messaging-async](../topics/08-messaging-async/)
 - [ ] [09-system-design](../topics/09-system-design/)
 - [ ] [10-software-architecture](../topics/10-software-architecture/)
@@ -47,6 +47,7 @@
 | W1 (2026-09-30) | 04-auth-security | notes(8) + examples(8) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 05-networking-proxy-dns | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 06-databases | notes(8) + examples(8) + exercises(5/7 tests) + Q/A(20+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 07-caching | notes(6) + examples(8) + exercises(5/9 tests) + Q/A(20+) | 4 (pending self-quiz) |
 
 ## Completed log
 
@@ -95,3 +96,11 @@
 - **Exercises (5, 7/7 pytest pass):** `exercise-01-cte-window`, `exercise-02-index-fix`, `exercise-03-transfer`, `exercise-04-pipeline`, `exercise-05-bm25-ring`. Run: `uv run pytest topics/06-databases/exercises -q`.
 - **Interview Q/A (20+):** in `topics/06-databases/interview-questions.md` + gotchas + self-score table.
 - **Verified:** 7 passed; `ruff check` + `ruff format --check` clean (SIM105 suppress adopted).
+
+### 2026-09-30 — 07-caching ✅ (`topic/07-caching` → main)
+- **Stack:** `uv add fakeredis cachetools` (real Redis commands offline; Lua documented as prod script — fakeredis verified unable).
+- **Notes (6):** `01-strategies` (5 habits, delete-not-update, TTL), `02-eviction-horsemen` (LRU/LFU/FIFO/TTL + 4 shields), `03-redis-types` (9 types + pub/sub + MULTI/Lua), `04-redis-ops` (RDB/AOF, Sentinel/Cluster/slots, Redlock+fencing, limits/sessions, Stack), `05-python-layers` (lru_cache/TTLCache, memcached, L1→DB cake), `06-llm-caching` (exact/semantic, prompt cache, KV math).
+- **Examples (8, all green):** `01_strategies.py`, `02_eviction.py`, `03_singleflight.py` (20 threads → 1 trip), `04_redis_types.py` (all 9 types + pubsub + MULTI), `05_lock_limit.py` (token lock + zset window), `06_python_cache.py`, `07_semantic_cache.py` (paraphrase 0.90 hit + 10.7GB KV math), `08_http_cache.js` (live 200→304).
+- **Exercises (5, 9/9 pytest pass):** `exercise-01-aside-ttl`, `exercise-02-lru`, `exercise-03-singleflight` (cleaned thread-lambda leftover in test), `exercise-04-leaderboard-lock`, `exercise-05-semantic`. Run: `uv run pytest topics/07-caching/exercises -q`.
+- **Interview Q/A (20+):** in `topics/07-caching/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 9 passed; `ruff check` + `ruff format --check` clean.
