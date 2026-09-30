@@ -1,0 +1,15 @@
+{
+  "name": "genai-interview",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Full Stack GenAI interview prep + hands-on practice",
+  "type": "module",
+  "scripts": {
+    "lint": "echo \"add eslint when frontend practice starts\"",
+    "test": "echo \"add vitest/jest when frontend practice starts\"",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}

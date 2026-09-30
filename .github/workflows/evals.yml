@@ -1,0 +1,15 @@
+name: evals
+# Manual / scheduled LLM evals (RAGAS, DeepEval, promptfoo).
+# Keeps CI fast; evals need API keys and are non-deterministic.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1"
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Add per-topic eval entrypoints, e.g. uv run pytest topics/19-rag -m eval"

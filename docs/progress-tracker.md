@@ -1,0 +1,81 @@
+# Progress Tracker
+
+> Check off as you finish: notes + examples run + exercises + interview Qs.
+> Status log lives below in [Completed log](#completed-log) — update it every time a topic is finished.
+
+## Core Engineering
+- [x] [01-programming-fundamentals](../topics/01-programming-fundamentals/) — done 2026-09-30 (see log)
+- [x] [02-api-design-web-protocols](../topics/02-api-design-web-protocols/) — done 2026-09-30 (see log)
+- [x] [03-backend-frameworks](../topics/03-backend-frameworks/) — done 2026-09-30 (see log)
+- [x] [04-auth-security](../topics/04-auth-security/) — done 2026-09-30 (see log)
+- [ ] [05-networking-proxy-dns](../topics/05-networking-proxy-dns/)
+- [ ] [06-databases](../topics/06-databases/)
+- [ ] [07-caching](../topics/07-caching/)
+- [ ] [08-messaging-async](../topics/08-messaging-async/)
+- [ ] [09-system-design](../topics/09-system-design/)
+- [ ] [10-software-architecture](../topics/10-software-architecture/)
+- [ ] [11-frontend-fullstack](../topics/11-frontend-fullstack/)
+- [ ] [12-devops-cloud](../topics/12-devops-cloud/)
+- [ ] [13-scripting-linux](../topics/13-scripting-linux/)
+- [ ] [14-observability](../topics/14-observability/)
+- [ ] [15-testing-quality](../topics/15-testing-quality/)
+
+## GenAI
+- [ ] [16-llm-fundamentals](../topics/16-llm-fundamentals/)
+- [ ] [17-prompt-engineering](../topics/17-prompt-engineering/)
+- [ ] [18-embeddings-vector-db](../topics/18-embeddings-vector-db/)
+- [ ] [19-rag](../topics/19-rag/)
+- [ ] [20-agents-orchestration](../topics/20-agents-orchestration/)
+- [ ] [21-evaluation](../topics/21-evaluation/)
+- [ ] [22-fine-tuning](../topics/22-fine-tuning/)
+- [ ] [23-llm-serving-llmops](../topics/23-llm-serving-llmops/)
+- [ ] [24-guardrails-safety](../topics/24-guardrails-safety/)
+- [ ] [25-multimodal-genai](../topics/25-multimodal-genai/)
+- [ ] [26-data-engineering-genai](../topics/26-data-engineering-genai/)
+- [ ] [27-classical-ml-basics](../topics/27-classical-ml-basics/)
+
+## Career
+- [ ] [28-engineering-practices-soft-skills](../topics/28-engineering-practices-soft-skills/)
+- [ ] [29-interview-scenarios](../topics/29-interview-scenarios/)
+
+## Weekly log
+| Week | Focus | Done | Interview-ready (0-5) |
+| ---- | ----- | ---- | --------------------- |
+| W1 (2026-09-30) | 01-programming-fundamentals | notes(8) + examples(13) + exercises(5/12 tests) + Q/A(25+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 02-api-design-web-protocols | notes(8) + examples(11) + exercises(5/12 tests) + Q/A(25+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 03-backend-frameworks | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 04-auth-security | notes(8) + examples(8) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
+
+## Completed log
+
+### 2026-09-30 — 01-programming-fundamentals ✅
+- **Notes (8):** `01-python-core`, `02-python-functions`, `03-python-oop-typing`, `04-python-async-tooling`, `05-javascript`, `06-typescript-node`, `07-dsa-big-o`, `08-solid-patterns-concurrency` — kid-style + real-world (Swiggy, tiffin, waiter).
+- **Examples (13, all ran green):** `01_mutability.py`, `02_comprehensions_generators.py`, `03_decorators_context_managers.py`, `04_oop_dataclass_pydantic.py`, `05_async_demo.py` (2s→1s), `06_exceptions_logging.py`, `07_closures_this.js`, `08_promises_async.js`, `09_node_streams.js`, `10_dsa_patterns.py`, `11_patterns_solid.py`, `12_race_lock.py`, `13_typescript_demo.ts`.
+- **Exercises (5, 12/12 pytest pass):** `exercise-01-mutable-default`, `exercise-02-generator`, `exercise-03-retry-decorator`, `exercise-04-async-parallel`, `exercise-05-dsa-patterns`. Run: `uv run pytest topics/01-programming-fundamentals/exercises -q`.
+- **Interview Q/A (25+):** in `topics/01-programming-fundamentals/interview-questions.md` with one-liner + hook + gotchas + self-score table.
+- **Infra fixes:** `pyproject.toml` pytest config kept minimal; exercise tests use unique basenames + importlib loader (no cross-import collision); ruff clean; fixed ESM-`this` demo for `"type": "module"`.
+- **Repo reorg:** `01–29` moved under `topics/` + `topics/README.md` index; root `README.md` banner; `docs/conventions.md`, `projects/README.md`, `Makefile`, `.github` templates updated to `topics/...` paths.
+- **Verified:** `uv run pytest topics/01-programming-fundamentals/exercises -q` → 12 passed; `ruff check` + `ruff format --check` clean; node examples run (incl. `.ts` via type-stripping).
+
+### 2026-09-30 — 02-api-design-web-protocols ✅
+- **Notes (8):** `01-rest-foundations` (restaurant menu, nouns-vs-verbs, safe/idempotent, RMM/HATEOAS), `02-status-errors-versioning` (codes 1xx–5xx, RFC7807, versioning, cursor/keyset, 202+poll), `03-http-deep-dive` (1.1/2/3, anatomy, param seats, content types, streaming), `04-headers-cookies-cors` (20 headers, cookie stamps, preflight checklist), `05-other-styles` (SOAP deed, GraphQL librarian N+1/DataLoader, gRPC walkie-talkie, WS/SSE/webhooks, picker table), `06-caching-rate-limit` (ETag→304, token/leaky/sliding, 429+Retry-After), `07-tooling-middleware` (OpenAPI/AsyncAPI, curl, gateways/BFF, onion chain), `08-resilience` (timeouts, backoff+jitter, breaker, bulkhead, DLQ).
+- **Examples (11, all ran green):** `01_rest_design.py`, `02_status_errors_pagination.py` (cursor walk 1→10), `03_caching.py` (200→304), `04_rate_limit_retry.py` (burst+refill, idempotency), `05_circuit_breaker.py` (fuse-box states), `06_styles_compare.py` (N+1 5→1, HMAC), `07_sse_webhooks_cors.py` (live localhost SSE server + client, preflight, cookies), `08_middleware.py` (trace→auth→log), `09_openapi_contract.py` (lint + curl), `10_fetch_client.js` (429→retry w/ Retry-After), `11_sse_parser.js` (tape parser; fixed comment-line bug during verification).
+- **Exercises (5, 12/12 pytest pass):** `exercise-01-orders-api-design`, `exercise-02-cursor-pagination`, `exercise-03-etag-cache`, `exercise-04-bucket-backoff`, `exercise-05-breaker-webhook`. Run: `uv run pytest topics/02-api-design-web-protocols/exercises -q`.
+- **Interview Q/A (25+):** in `topics/02-api-design-web-protocols/interview-questions.md` with one-liner + hook + gotchas + self-score table.
+- **Verified:** 12 passed; `ruff check` + `ruff format --check` clean; node examples run.
+
+### 2026-09-30 — 03-backend-frameworks ✅
+- **Stack:** `uv add fastapi sqlalchemy python-multipart pydantic-settings` (TestClient via httpx; `pyproject.toml` + ruff per-file-ignores `B008` for the FastAPI `Depends` idiom).
+- **Notes (7):** `01-frameworks-map` (picker + lifecycle), `02-routing-validation-di` (Pydantic guard, response_model, Depends/overrides), `03-orm` (Session basket, N+1 kill, Alembic, repo), `04-async-asgi-servers` (def vs async def, WSGI/ASGI, workers, lifespan, health vs ready), `05-background-tasks` (202+jobs, Celery/RQ/BullMQ/APScheduler, idempotent+DLQ), `06-upload-stream-page` (capped streamed uploads, StreamingResponse, page dep), `07-config-12factor` (env decides, vaults, fail fast, mask).
+- **Examples (7, all ran green):** `01_minimal_fastapi.py` (lifespan + 201/422 via TestClient), `02_di_overrides.py` (composed deps + swap), `03_sqlalchemy_nplus1.py` (counter proves 6→2 + repo; fixed missing FK during verification), `04_tasks_queue.py` (202 + idempotent retry worker), `05_upload_stream_page.py` (201 upload + NDJSON 50 lines + page 11–15), `06_config.py` (dev/prod + masked), `07_node_http_api.js` (zero-dep onion).
+- **Exercises (5, 10/10 pytest pass):** `exercise-01-crud-api` (TestClient 201/404/422), `exercise-02-pagination-dep`, `exercise-03-repo-n1` (≤2 queries asserted), `exercise-04-job-retry`, `exercise-05-config-stream`. Run: `uv run pytest topics/03-backend-frameworks/exercises -q`.
+- **Interview Q/A (20+):** in `topics/03-backend-frameworks/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 10 passed; `ruff check` + `ruff format --check` clean; topics 01–02 still green.
+
+### 2026-09-30 — 04-auth-security ✅
+- **Stack:** `uv add pyjwt cryptography` (HS256 + RS256 via real RSA keys; TestClient auth API).
+- **Notes (8):** `01-authn-authz-models` (gates, badges, MFA/passkeys, SSO/OIDC/SAML/LDAP/Kerberos, IdPs), `02-jwt` (3 parts, HS vs RS, rotation, jti), `03-oauth2-oidc` (grants, PKCE, scopes, sub), `04-access-control` (RBAC/ABAC/ACL, OPA, IDOR), `05-crypto-tls` (hash/enc/encoding, envelope/KMS, handshake, mTLS, LE), `06-owasp` (API 10 + classics thief→lock), `07-app-defenses` (headers/CSP, validation, WAF, SAST/SCA/DAST, audit), `08-privacy-llm-zerotrust` (PII/GDPR, LLM Top 10, zero trust, SOC2/ISO/HIPAA).
+- **Examples (8, all ran green):** `01_password_hashing.py` (lint caught real bug: verify ignored stored cost — fixed + iters param), `02_jwt_hs_rs.py` (tamper/expiry/alg-confusion rejected), `03_auth_api.py` (rewrote messy draft → clean login/rotate/logout, 401/403), `04_oauth_pkce.py`, `05_rbac_abac.py`, `06_injection_defenses.py` (fixed Win `echo` → `sys.executable -c`; cleaned SSRF check), `07_security_headers.py`, `08_auth_client.js` (fixed refresh-without-headers crash).
+- **Exercises (5, 10/10 pytest pass):** `exercise-01-passwords`, `exercise-02-jwt-rotation`, `exercise-03-idor-guard`, `exercise-04-injection-guards`, `exercise-05-headers-pii`. Run: `uv run pytest topics/04-auth-security/exercises -q`.
+- **Interview Q/A (20+):** in `topics/04-auth-security/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 10 passed; `ruff check` + `ruff format --check` clean.

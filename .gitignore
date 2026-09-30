@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.uv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage*
+
+# Node
+node_modules/
+dist/
+.next/
+out/
+*.log
+
+# Env / secrets - never commit real values
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Data / models / vector stores (local practice artifacts)
+data/
+*.parquet
+*.bin
+*.gguf
+*.safetensors
+chroma/
+qdrant_storage/
+pgdata/
+
+# Docker
+.docker/
+
+# Misc
+*.tmp
+*.bak
