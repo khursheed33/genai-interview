@@ -11,7 +11,7 @@
 - [x] [05-networking-proxy-dns](../topics/05-networking-proxy-dns/) — done 2026-09-30 (see log)
 - [x] [06-databases](../topics/06-databases/) — done 2026-09-30 (see log)
 - [x] [07-caching](../topics/07-caching/) — done 2026-09-30 (see log)
-- [ ] [08-messaging-async](../topics/08-messaging-async/)
+- [x] [08-messaging-async](../topics/08-messaging-async/) — done 2026-09-30 (see log)
 - [ ] [09-system-design](../topics/09-system-design/)
 - [ ] [10-software-architecture](../topics/10-software-architecture/)
 - [ ] [11-frontend-fullstack](../topics/11-frontend-fullstack/)
@@ -48,6 +48,7 @@
 | W1 (2026-09-30) | 05-networking-proxy-dns | notes(7) + examples(7) + exercises(5/10 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 06-databases | notes(8) + examples(8) + exercises(5/7 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 07-caching | notes(6) + examples(8) + exercises(5/9 tests) + Q/A(20+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 08-messaging-async | notes(7) + examples(8) + exercises(5/9 tests) + Q/A(20+) | 4 (pending self-quiz) |
 
 ## Completed log
 
@@ -104,3 +105,10 @@
 - **Exercises (5, 9/9 pytest pass):** `exercise-01-aside-ttl`, `exercise-02-lru`, `exercise-03-singleflight` (cleaned thread-lambda leftover in test), `exercise-04-leaderboard-lock`, `exercise-05-semantic`. Run: `uv run pytest topics/07-caching/exercises -q`.
 - **Interview Q/A (20+):** in `topics/07-caching/interview-questions.md` + gotchas + self-score table.
 - **Verified:** 9 passed; `ruff check` + `ruff format --check` clean.
+
+### 2026-09-30 — 08-messaging-async ✅ (`topic/08-messaging-async` → main)
+- **Notes (7):** `01-queues-streams` (compete/broadcast/replay, SNS→SQS, backpressure), `02-kafka` (partitions/groups/offsets, retention/compaction, EOS, RF=3), `03-rabbitmq` (4 exchanges, ack/prefetch/quorum), `04-semantics` (3 promises, idempotency, DLQ, ordering), `05-eda-patterns` (sourcing/CQRS/saga/outbox), `06-processing` (Kappa, windows, Spark/Flink), `07-orchestration` (4 conductors + GenAI plays).
+- **Examples (8, all green):** `01_queue_vs_stream.py`, `02_kafka_sim.py`, `03_rabbitmq_sim.py`, `04_semantics_dlq.py` (fixed attempt-counter bug live), `05_saga_outbox.py`, `06_redis_streams.py` (real XADD/groups/PEL on fakeredis), `07_sourcing_cqrs.py`, `08_dag_runner.js` (chunk retried try2).
+- **Exercises (5, 9/9 pytest pass):** `exercise-01-partitions`, `exercise-02-topic-route` (mid-`#` recursion), `exercise-03-idempotent-dlq`, `exercise-04-saga`, `exercise-05-sourced-account`. Run: `uv run pytest topics/08-messaging-async/exercises -q`.
+- **Interview Q/A (20+):** in `topics/08-messaging-async/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 9 passed; `ruff check` + `ruff format --check` clean (B007/SIM105/RUF017 fixed).
