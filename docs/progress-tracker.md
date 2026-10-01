@@ -112,3 +112,10 @@
 - **Exercises (5, 9/9 pytest pass):** `exercise-01-partitions`, `exercise-02-topic-route` (mid-`#` recursion), `exercise-03-idempotent-dlq`, `exercise-04-saga`, `exercise-05-sourced-account`. Run: `uv run pytest topics/08-messaging-async/exercises -q`.
 - **Interview Q/A (20+):** in `topics/08-messaging-async/interview-questions.md` + gotchas + self-score table.
 - **Verified:** 9 passed; `ruff check` + `ruff format --check` clean (B007/SIM105/RUF017 fixed).
+
+
+## Documentation pass — 2026-10-01
+
+The topic material now follows a consistent learning pattern: **explanation → examples/practice → exercises → interview questions**. Topics 09–29 received expanded Markdown explanations and dedicated `practice.md` guides. Topics 01–08 already contained substantial explanatory notes and existing runnable practice, so those materials were preserved rather than replaced.
+
+> Note: this documentation pass does **not** mark a topic complete. Completion still requires running the examples, finishing exercises, and revising the interview Q&A as recorded above.
