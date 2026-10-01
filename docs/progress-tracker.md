@@ -12,7 +12,7 @@
 - [x] [06-databases](../topics/06-databases/) — done 2026-09-30 (see log)
 - [x] [07-caching](../topics/07-caching/) — done 2026-09-30 (see log)
 - [x] [08-messaging-async](../topics/08-messaging-async/) — done 2026-09-30 (see log)
-- [ ] [09-system-design](../topics/09-system-design/)
+- [x] [09-system-design](../topics/09-system-design/) — done 2026-09-30 (see log)
 - [ ] [10-software-architecture](../topics/10-software-architecture/)
 - [ ] [11-frontend-fullstack](../topics/11-frontend-fullstack/)
 - [ ] [12-devops-cloud](../topics/12-devops-cloud/)
@@ -49,6 +49,7 @@
 | W1 (2026-09-30) | 06-databases | notes(8) + examples(8) + exercises(5/7 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 07-caching | notes(6) + examples(8) + exercises(5/9 tests) + Q/A(20+) | 4 (pending self-quiz) |
 | W1 (2026-09-30) | 08-messaging-async | notes(7) + examples(8) + exercises(5/9 tests) + Q/A(20+) | 4 (pending self-quiz) |
+| W1 (2026-09-30) | 09-system-design | notes(7+2 ADRs) + examples(8) + exercises(5/9 tests) + Q/A(20+) | 4 (pending self-quiz) |
 
 ## Completed log
 
@@ -112,3 +113,10 @@
 - **Exercises (5, 9/9 pytest pass):** `exercise-01-partitions`, `exercise-02-topic-route` (mid-`#` recursion), `exercise-03-idempotent-dlq`, `exercise-04-saga`, `exercise-05-sourced-account`. Run: `uv run pytest topics/08-messaging-async/exercises -q`.
 - **Interview Q/A (20+):** in `topics/08-messaging-async/interview-questions.md` + gotchas + self-score table.
 - **Verified:** 9 passed; `ruff check` + `ruff format --check` clean (B007/SIM105/RUF017 fixed).
+
+### 2026-09-30 — 09-system-design ✅ (`topic/09-system-design` → main)
+- **Notes (7+2 ADRs):** `01-scale-slo-estimation` (formula, nines, napkin), `02-blocks-glue` (kit, sharding, 2PC, Raft/Paxos/gossip, RPO/RTO), `03-classics-1` (shortener/limiter/notify), `04-classics-2` (chat/feed/video/crawler), `05-genai-rag` (flagship + enterprise + siblings), `06-genai-platforms` (tenants/agents/gateway/pipes), `07-docs-adr` + real `adr-001` (pgvector) + `adr-002` (SSE).
+- **Examples (8, all green):** `01_estimation.py` (fixed peak-compare + yearly-nines block), `02_bloom.py` (12KB, 0 FP!), `03_url_shortener.py` (TestClient mini-service), `04_limiter_distributed.py`, `05_raft_election.py` (rewrote muddled terms story → clean split-vote demo), `06_fanout_cost.py`, `07_rag_scale.py` (fixed float 49.99 + Win ≈ crash), `08_llm_gateway.js` (haiku→cache→opus fallback!).
+- **Exercises (5, 9/9 pytest pass):** `exercise-01-napkin` (fixed 675GB test math), `exercise-02-bloom-size`, `exercise-03-shortcode`, `exercise-04-quorum-vote`, `exercise-05-rag-budget`. Run: `uv run pytest topics/09-system-design/exercises -q`.
+- **Interview Q/A (20+):** in `topics/09-system-design/interview-questions.md` + gotchas + self-score table.
+- **Verified:** 9 passed; `ruff check` + `ruff format --check` clean.
