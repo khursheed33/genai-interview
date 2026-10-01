@@ -1,19 +1,19 @@
 # Engineering Practices and Soft Skills Notes
 
 ## Delivery
-Agile is a feedback-oriented way of planning and delivering work. Scrum defines roles/events/artifacts, but the useful principle is short feedback cycles and visible priorities.
+Agile emphasizes feedback and incremental delivery. Scrum provides a defined process, but the useful engineering principle is short feedback cycles and visible priorities.
 
-## Code review and documentation
-A good review checks correctness, security, maintainability, tests, observability, and operational impact. RFCs and ADRs capture decisions, context, alternatives, and consequences so future engineers do not need to reconstruct history.
+## Review and documentation
+A good code review checks correctness, security, maintainability, tests, observability, and operational impact. RFCs and ADRs preserve decisions, context, alternatives, and consequences.
 
 ## POC to production
-A proof of concept demonstrates feasibility. Production readiness adds security, tests, monitoring, failure handling, ownership, deployment, documentation, and cost controls.
+A proof of concept demonstrates feasibility. Production readiness adds security, testing, monitoring, failure handling, ownership, deployment, documentation, and cost controls.
 
 ## Build vs buy
-Compare total cost, differentiation, reliability, lock-in, integration effort, security, compliance, and opportunity cost. “Build” is not free simply because the software is internal.
+Compare total cost, differentiation, lock-in, reliability, integration effort, security, compliance, and opportunity cost.
 
-## Incidents and behavioral interviews
-During incidents, stabilize first, communicate clearly, preserve evidence, and follow with a blameless analysis of contributing conditions. STAR answers should explain Situation, Task, Action, and measurable Result.
+## Incidents and interviews
+Stabilize incidents first, communicate clearly, preserve evidence, and perform a blameless analysis of contributing conditions. STAR answers should cover Situation, Task, Action, and measurable Result.
 
 ## Practice
-Write an ADR, review a deliberately flawed PR, create a POC-to-production checklist, perform a build-vs-buy analysis, write an incident timeline, and answer five STAR questions using concrete results.
+Write an ADR, review a flawed PR, create a POC-to-production checklist, perform a build-vs-buy analysis, write an incident timeline, and answer five STAR questions with measurable results.
